@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IZ AGENCY – Design & Meta Ads</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#080808;--dark:#0f0f0f;--card:#141414;--border:rgba(255,255,255,0.07);--purple:#7B5CFA;--purple-light:rgba(123,92,250,0.12);--white:#f8f8f6;--muted:rgba(248,248,246,0.45);--green:#3DDB85}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;padding:0 56px;display:flex;justify-content:space-between;align-items:center;background:rgba(8,8,8,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;letter-spacing:0.12em;color:var(--white);text-decoration:none}
+.nav-links{display:flex;gap:40px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:400;letter-spacing:0.04em;transition:color 0.2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--purple);color:#fff;padding:10px 24px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:500;transition:all 0.2s}
+.nav-cta:hover{background:#8f73fb}
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 56px 80px;position:relative;overflow:hidden}
+.hero-glow{position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(123,92,250,0.12) 0%,transparent 65%);pointer-events:none}
+.hero-glow2{position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(61,219,133,0.06) 0%,transparent 65%);pointer-events:none}
+.hero-content{max-width:780px;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(61,219,133,0.25);background:rgba(61,219,133,0.07);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:500;letter-spacing:0.06em;color:var(--green);margin-bottom:36px}
+.hero-badge::before{content:'';width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 8px var(--green);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(38px,7vw,100px);line-height:0.9;letter-spacing:-0.03em;margin-bottom:36px;color:#f8f8f6}
+.hero-sub{font-size:17px;color:var(--muted);line-height:1.75;max-width:460px;margin-bottom:52px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:var(--purple);color:#fff;padding:15px 36px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:500;transition:all 0.2s;box-shadow:0 0 40px rgba(123,92,250,0.25)}
+.btn-primary:hover{background:#8f73fb;transform:translateY(-2px)}
+.btn-ghost{border:1px solid var(--border);color:var(--white);padding:15px 36px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:300;transition:all 0.2s}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.25);background:rgba(255,255,255,0.03)}
+.stats-strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:grid;grid-template-columns:repeat(4,1fr);background:var(--dark)}
+.stat-item{padding:40px 48px;border-right:1px solid var(--border)}
+.stat-item:last-child{border-right:none}
+.stat-big{font-family:'Syne',sans-serif;font-size:52px;font-weight:800;line-height:1;margin-bottom:6px;color:var(--white)}
+.stat-big em{color:var(--purple);font-style:normal}
+.stat-label{font-size:13px;color:var(--muted);line-height:1.5}
+section{padding:110px 56px}
+.s-label{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--purple);font-weight:500;margin-bottom:20px}
+h2{font-family:'Syne',sans-serif;font-size:clamp(38px,5vw,62px);font-weight:800;line-height:1.05;letter-spacing:-0.02em;margin-bottom:20px}
+.s-sub{font-size:16px;color:var(--muted);line-height:1.75;max-width:480px;margin-bottom:64px}
+.services{background:var(--dark)}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.svc{background:var(--card);padding:44px 40px;transition:background 0.3s;position:relative}
+.svc:hover{background:#1a1a1a}
+.svc-num{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;color:var(--purple);letter-spacing:0.1em;margin-bottom:20px}
+.svc-title{font-family:'Syne',sans-serif;font-size:24px;font-weight:700;margin-bottom:14px}
+.svc-desc{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:22px}
+.svc-pill{display:inline-block;font-size:12px;background:rgba(61,219,133,0.08);color:var(--green);border:1px solid rgba(61,219,133,0.2);border-radius:4px;padding:5px 12px}
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.res-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:40px 32px;transition:all 0.3s;position:relative;overflow:hidden}
+.res-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--purple);transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.res-card:hover{transform:translateY(-5px);border-color:rgba(123,92,250,0.25)}
+.res-card:hover::before{transform:scaleX(1)}
+.res-client{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;font-weight:500}
+.res-num{font-family:'Syne',sans-serif;font-size:64px;font-weight:800;color:var(--purple);line-height:1;margin-bottom:12px}
+.res-desc{font-size:14px;color:var(--muted);line-height:1.7}
+.portfolio{background:var(--dark)}
+.port-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.port-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:40px 36px;transition:all 0.3s}
+.port-card:hover{border-color:rgba(123,92,250,0.3);transform:translateY(-4px)}
+.port-card.c8{grid-column:span 8}.port-card.c4{grid-column:span 4}
+.port-tag{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);margin-bottom:14px;font-weight:500}
+.port-name{font-family:'Syne',sans-serif;font-size:30px;font-weight:700;margin-bottom:12px}
+.port-desc{font-size:14px;color:var(--muted);line-height:1.75}
+.port-nums{display:flex;gap:28px;margin-top:24px;flex-wrap:wrap}
+.pn strong{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--green);display:block}
+.pn span{font-size:12px;color:var(--muted)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.price-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:44px 36px;transition:all 0.3s;position:relative}
+.price-card:hover{transform:translateY(-4px);border-color:rgba(123,92,250,0.25)}
+.price-card.hot{background:var(--purple);border-color:var(--purple)}
+.price-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--green);color:#000;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:4px 18px;border-radius:100px;white-space:nowrap}
+.price-tier{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;font-weight:500}
+.price-card.hot .price-tier{color:rgba(255,255,255,0.65)}
+.price-val{font-family:'Syne',sans-serif;font-size:52px;font-weight:800;line-height:1;margin-bottom:6px}
+.price-note{font-size:13px;color:var(--muted);margin-bottom:32px}
+.price-card.hot .price-note{color:rgba(255,255,255,0.55)}
+.price-list{list-style:none;margin-bottom:36px}
+.price-list li{font-size:14px;color:var(--muted);padding:9px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:flex-start}
+.price-card.hot .price-list li{color:rgba(255,255,255,0.8);border-color:rgba(255,255,255,0.12)}
+.price-list li::before{content:'→';color:var(--purple);font-size:12px;flex-shrink:0;margin-top:1px}
+.price-card.hot .price-list li::before{color:#fff}
+.price-btn{display:block;text-align:center;padding:15px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:500;transition:all 0.2s;font-family:'Inter',sans-serif}
+.price-btn-outline{border:1px solid var(--border);color:var(--white)}
+.price-btn-outline:hover{border-color:rgba(255,255,255,0.25);background:rgba(255,255,255,0.04)}
+.price-btn-white{background:#fff;color:var(--purple)}
+.price-btn-white:hover{background:#f0f0f0}
+.contact{background:var(--dark)}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact-methods{display:flex;flex-direction:column;gap:14px;margin-top:40px}
+.cmethod{display:flex;align-items:center;gap:18px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px 24px;text-decoration:none;color:var(--white);transition:all 0.2s}
+.cmethod:hover{border-color:rgba(123,92,250,0.35);transform:translateX(6px)}
+.cmethod-icon{width:44px;height:44px;background:var(--purple-light);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.cmethod-lbl{font-size:11px;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;font-weight:500}
+.cmethod-val{font-size:14px;font-weight:400;margin-top:2px}
+.cform{display:flex;flex-direction:column;gap:14px}
+.fg{display:flex;flex-direction:column;gap:8px}
+.fg label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.fg input,.fg textarea,.fg select{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:13px 16px;color:var(--white);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;transition:border-color 0.2s;outline:none}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:rgba(123,92,250,0.5)}
+.fg textarea{resize:vertical;min-height:110px}
+.fg select option{background:var(--dark)}
+.submit-btn{background:var(--purple);color:#fff;border:none;padding:16px;border-radius:6px;font-size:14px;font-weight:500;cursor:pointer;transition:all 0.2s;font-family:'Inter',sans-serif;box-shadow:0 0 40px rgba(123,92,250,0.2)}
+.submit-btn:hover{background:#8f73fb;transform:translateY(-2px)}
+footer{border-top:1px solid var(--border);padding:40px 56px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.f-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;letter-spacing:0.12em;color:var(--white)}
+.f-copy{font-size:13px;color:var(--muted)}
+.f-links{display:flex;gap:24px}
+.f-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s}
+.f-links a:hover{color:var(--white)}
+.wa{position:fixed;bottom:30px;right:30px;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;text-decoration:none;z-index:200;box-shadow:0 4px 24px rgba(37,211,102,0.35);transition:transform 0.2s}
+.wa:hover{transform:scale(1.12)}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--black)}::-webkit-scrollbar-thumb{background:var(--purple);border-radius:2px}
+@media(max-width:900px){
+  nav{padding:0 24px}.nav-links,.nav-cta{display:none}
+  .hero{padding:100px 24px 60px}
+  section{padding:70px 24px}
+  .stats-strip{grid-template-columns:1fr 1fr}.stat-item{padding:28px 24px}
+  .services-grid,.results-grid,.pricing-grid{grid-template-columns:1fr}
+  .port-grid{grid-template-columns:1fr}.port-card.c8,.port-card.c4{grid-column:span 1}
+  .contact-wrap{grid-template-columns:1fr;gap:40px}
+  footer{padding:32px 24px;flex-direction:column;text-align:center}
+  .price-card.hot{transform:none}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#" class="nav-logo">IZ AGENCY</a>
+  <ul class="nav-links">
+    <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#ergebnisse">Ergebnisse</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#preise">Preise</a></li>
+  </ul>
+  <a href="#kontakt" class="nav-cta">Erstgespräch buchen</a>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-glow"></div><div class="hero-glow2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Verfügbar für neue Projekte</div>
+    <h1>Design das<br>Kunden<br>gewinnt.</h1>
+    <p class="hero-sub">Meta Ads, Branding & Social Media aus einer Hand. Wir helfen Unternehmen in Deutschland mehr Kunden zu gewinnen – mit Design das Ergebnisse bringt.</p>
+    <div class="hero-ctas">
+      <a href="#kontakt" class="btn-primary">Kostenloses Erstgespräch</a>
+      <a href="portfolio.pdf" target="_blank" class="btn-ghost">Portfolio ansehen</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats-strip">
+  <div class="stat-item"><div class="stat-big">56<em>+</em></div><div class="stat-label">Bewerber in<br>1 Woche (NIRO)</div></div>
+  <div class="stat-item"><div class="stat-big">32<em>+</em></div><div class="stat-label">Anfragen in<br>2 Wochen</div></div>
+  <div class="stat-item"><div class="stat-big">35<em>%</em></div><div class="stat-label">CTR-Steigerung<br>Dachdeckerei Riechers</div></div>
+  <div class="stat-item"><div class="stat-big">5<em>+</em></div><div class="stat-label">Jahre<br>Erfahrung</div></div>
+</div>
+
+<section id="leistungen" class="services">
+  <div class="s-label">Was wir machen</div>
+  <h2>Vier Bereiche.<br>Ein Ziel.</h2>
+  <p class="s-sub">Jedes Projekt wird strategisch gedacht – nicht nur schön gestaltet, sondern auf Wirkung ausgelegt.</p>
+  <div class="services-grid">
+    <div class="svc"><div class="svc-num">01</div><div class="svc-title">Meta Ads & Performance</div><p class="svc-desc">Creatives die stoppen. Kampagnen die konvertieren. Wir entwickeln, testen und optimieren Anzeigen für maximale Performance.</p><span class="svc-pill">56 Bewerber in 1 Woche für NIRO</span></div>
+    <div class="svc"><div class="svc-num">02</div><div class="svc-title">Branding & Corporate Design</div><p class="svc-desc">Von Logo bis kompletter Markenidentität. Typografie, Farbwelt, Bildsprache – konsistent über alle Touchpoints.</p><span class="svc-pill">+23% Wiedererkennung für Ketch May Beef</span></div>
+    <div class="svc"><div class="svc-num">03</div><div class="svc-title">Social Media Content</div><p class="svc-desc">Posts, Stories, Reels – visuelle Formate die Zielgruppen ansprechen und organische Reichweite generieren.</p><span class="svc-pill">Komplette Social Feeds für 5+ Kunden</span></div>
+    <div class="svc"><div class="svc-num">04</div><div class="svc-title">Druckprodukte</div><p class="svc-desc">Visitenkarten, Flyer, Broschüren, Speisekarten – druckfertig und im individuellen CI des Unternehmens.</p><span class="svc-pill">Restaurants, Handwerk, Berater</span></div>
+  </div>
+</section>
+
+<section id="ergebnisse">
+  <div class="s-label">Echte Zahlen</div>
+  <h2>Ergebnisse<br>die zählen.</h2>
+  <p class="s-sub">Kein Design um des Designs willen. Jedes Projekt wird an Ergebnissen gemessen.</p>
+  <div class="results-grid">
+    <div class="res-card"><div class="res-client">NIRO Media GmbH</div><div class="res-num">56</div><p class="res-desc">Bewerber in einer Woche durch gezielt gestaltete Meta Ads mit klaren Benefits und emotionaler Ansprache.</p></div>
+    <div class="res-card"><div class="res-client">Fechner Sauna Manufaktur</div><div class="res-num">32</div><p class="res-desc">Qualifizierte Anfragen in 2 Wochen durch Luxus-Positionierung mit warmer Bildsprache und klarem CTA.</p></div>
+    <div class="res-card"><div class="res-client">Dachdeckerei Riechers</div><div class="res-num">+35%</div><p class="res-desc">CTR-Steigerung durch kreative Neugestaltung der Anzeigen mit starken Headlines.</p></div>
+  </div>
+</section>
+
+<section id="portfolio" class="portfolio">
+  <div class="s-label">Ausgewählte Projekte</div>
+  <h2>Aus der Praxis.</h2>
+  <p class="s-sub">Von der Gastronomie bis zum Handwerk – jede Branche hat ihre eigene Bildsprache.</p>
+  <div class="port-grid">
+
+    <div class="port-card c8">
+      <div class="port-tag">Meta Ads & Performance Marketing</div>
+      <div class="port-name">NIRO Media GmbH</div>
+      <p class="port-desc">Recruiting-Kampagne für ambitionierte Vertriebsprofis. Klare USPs, attraktive Headlines und direkte Benefits – Design das zur sofortigen Bewerbung motiviert.</p>
+      <div class="port-nums">
+        <div class="pn"><strong>56</strong><span>Bewerber in 1 Woche</span></div>
+        <div class="pn"><strong>2</strong><span>Ad-Varianten</span></div>
+        <div class="pn"><strong>Meta</strong><span>Ads</span></div>
+      </div>
+    </div>
+
+    <div class="port-card c4">
+      <div class="port-tag">Meta Ads & Performance</div>
+      <div class="port-name">Fechner Sauna</div>
+      <p class="port-desc">Luxus-Kampagne für Saunamanufaktur. Warme Holztöne, emotionale Slogans, niedrigschwellige CTAs – Sauna als persönliche Oase positioniert.</p>
+      <div class="port-nums">
+        <div class="pn"><strong>32</strong><span>Anfragen in 2 Wochen</span></div>
+      </div>
+    </div>
+
+    <div class="port-card c4">
+      <div class="port-tag">Meta Ads & Performance</div>
+      <div class="port-name">Dachdeckerei Riechers</div>
+      <p class="port-desc">Recruiting-Kampagne für Dachdecker. Starke Zahlen, klare Benefits, emotionale Identifikation – CTR um 35% gesteigert.</p>
+      <div class="port-nums">
+        <div class="pn"><strong>+35%</strong><span>CTR-Steigerung</span></div>
+      </div>
+    </div>
+
+    <div class="port-card c8">
+      <div class="port-tag">Branding & Corporate Design</div>
+      <div class="port-name">Ketch May Beef</div>
+      <p class="port-desc">Komplettes Redesign für Burger & Steakhouse: Logo, Speisekarte, Social Media, Print und Merchandise. Schwarz-Rot-Palette mit kraftvoller Typografie – konsistenter Auftritt von der Visitenkarte bis zum Instagram-Feed.</p>
+      <div class="port-nums">
+        <div class="pn"><strong>+23%</strong><span>Wiedererkennung</span></div>
+        <div class="pn"><strong>360°</strong><span>Branding</span></div>
+        <div class="pn"><strong>6+</strong><span>Touchpoints</span></div>
+      </div>
+    </div>
+
+    <div class="port-card c4">
+      <div class="port-tag">Branding & Corporate Design</div>
+      <div class="port-name">Baba Juice Cocktailbar</div>
+      <p class="port-desc">Innovatives Cocktailbar-Konzept: Kalligrafie trifft Futurismus. Logo, Menügestaltung, Printprodukte und Social-Media-Visuals – ästhetisch, funktional, emotional.</p>
+    </div>
+
+    <div class="port-card c4">
+      <div class="port-tag">Social Media Content</div>
+      <div class="port-name">Klebl Bauzentrum</div>
+      <p class="port-desc">Kompletter Instagram-Feed für Baustoffhandel. Saisonale Inhalte, Produktposts, Bildungsformate – konsistent und wiedererkennbar über 77+ Beiträge.</p>
+    </div>
+
+    <div class="port-card c4">
+      <div class="port-tag">Social Media Content</div>
+      <div class="port-name">Dachdeckerei Riechers</div>
+      <p class="port-desc">Instagram-Aufbau von 0 auf 250 Follower. Bewertungsposts, Leistungsübersichten, Teamfotos und informative Fachbeiträge.</p>
+      <div class="port-nums">
+        <div class="pn"><strong>250</strong><span>Follower aufgebaut</span></div>
+      </div>
+    </div>
+
+    <div class="port-card c4">
+      <div class="port-tag">Druckprodukte</div>
+      <div class="port-name">Restaurant Aadria & Stadtl</div>
+      <p class="port-desc">Speise- und Getränkekarten für zwei Restaurants – jeweils im individuellen Stil passend zum Charakter des Hauses. Druckfertig geliefert.</p>
+    </div>
+
+    <div class="port-card c4">
+      <div class="port-tag">Druckprodukte</div>
+      <div class="port-name">Svetlana Sabelfeld & Peter Walder</div>
+      <p class="port-desc">Visitenkarten für Ernährungsberaterin sowie Arbeitsbericht-Formular für Handwerksunternehmen – integriert ins bestehende Corporate Design.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="preise">
+  <div class="s-label">Investition</div>
+  <h2>Klare Preise.<br>Klare Leistung.</h2>
+  <p class="s-sub">Keine versteckten Kosten. Du weißt von Anfang an was du bekommst.</p>
+  <div class="pricing-grid">
+    <div class="price-card"><div class="price-tier">Starter</div><div class="price-val">ab 400€</div><div class="price-note">einmalig</div><ul class="price-list"><li>Logo oder 1 Ad-Creative</li><li>2 Revisionsrunden</li><li>Druckfertige Dateien</li><li>Lieferung in 5 Werktagen</li></ul><a href="#kontakt" class="price-btn price-btn-outline">Anfragen</a></div>
+    <div class="price-card hot"><div class="price-badge">Beliebt</div><div class="price-tier">Wachstum</div><div class="price-val">ab 800€</div><div class="price-note">einmalig oder /Monat</div><ul class="price-list"><li>Komplettes Branding-Paket</li><li>Meta Ads Betreuung</li><li>Social Media Design (4 Posts)</li><li>Unbegrenzte Revisionen</li><li>Monatliches Reporting</li></ul><a href="#kontakt" class="price-btn price-btn-white">Jetzt starten</a></div>
+    <div class="price-card"><div class="price-tier">Premium</div><div class="price-val">ab 1.500€</div><div class="price-note">/Monat Retainer</div><ul class="price-list"><li>Alles aus Wachstum</li><li>Video Ads & Reels</li><li>12+ Social Media Posts</li><li>Strategisches Consulting</li><li>Direkte Erreichbarkeit</li></ul><a href="#kontakt" class="price-btn price-btn-outline">Anfragen</a></div>
+  </div>
+</section>
+
+<section id="kontakt" class="contact">
+  <div class="s-label">Zusammenarbeiten</div>
+  <h2>Lass uns reden.</h2>
+  <div class="contact-wrap">
+    <div>
+      <p class="s-sub">Kostenloses Erstgespräch – 30 Minuten, kein Druck. Wir schauen uns dein Unternehmen an und sagen dir ehrlich was wir tun können.</p>
+      <div class="contact-methods">
+        <a href="https://calendly.com" target="_blank" class="cmethod"><div class="cmethod-icon">📅</div><div><div class="cmethod-lbl">Termin buchen</div><div class="cmethod-val">Kostenloses Erstgespräch</div></div></a>
+        <a href="https://wa.me/4915566095459" target="_blank" class="cmethod"><div class="cmethod-icon">💬</div><div><div class="cmethod-lbl">WhatsApp</div><div class="cmethod-val">+49 155 660 95459</div></div></a>
+        <a href="https://instagram.com/zavada.design" target="_blank" class="cmethod"><div class="cmethod-icon">📸</div><div><div class="cmethod-lbl">Instagram</div><div class="cmethod-val">@zavada.design</div></div></a>
+        <a href="mailto:zavada.igor@web.de" class="cmethod"><div class="cmethod-icon">✉️</div><div><div class="cmethod-lbl">E-Mail</div><div class="cmethod-val">zavada.igor@web.de</div></div></a>
+      </div>
+    </div>
+    <div class="cform">
+      <div class="fg"><label>Dein Name</label><input type="text" placeholder="Max Mustermann"></div>
+      <div class="fg"><label>Unternehmen</label><input type="text" placeholder="Musterfirma GmbH"></div>
+      <div class="fg"><label>E-Mail</label><input type="email" placeholder="max@musterfirma.de"></div>
+      <div class="fg"><label>Was brauchst du?</label><select><option value="">Bitte wählen...</option><option>Meta Ads Kampagne</option><option>Branding & Logo</option><option>Social Media Betreuung</option><option>Druckprodukte</option><option>Komplettpaket</option></select></div>
+      <div class="fg"><label>Nachricht</label><textarea placeholder="Kurz beschreiben was du machst und was du brauchst..."></textarea></div>
+      <button class="submit-btn" onclick="alert('Danke! IZ Agency meldet sich innerhalb von 24h.')">Nachricht senden →</button>
+    </div>
+  </div>
+</section>
+
+<!-- IMPRESSUM -->
+<section id="impressum" style="display:none;background:var(--dark)">
+  <div class="s-label">Rechtliches</div>
+  <h2>Impressum</h2>
+  <div style="max-width:640px;font-size:15px;line-height:1.9;color:var(--muted)">
+    <p style="margin-bottom:24px;font-size:17px;color:var(--white);font-family:'Syne',sans-serif;font-weight:700">Angaben gemäß § 5 TMG</p>
+    <p style="margin-bottom:6px;color:var(--white)"><strong>Igor Zavada</strong></p>
+    <p>IZ Agency</p>
+    <p>Stauferstraße 12</p>
+    <p style="margin-bottom:20px">74523 Schwäbisch Hall</p>
+    <p style="margin-bottom:4px"><strong style="color:var(--white)">Kontakt</strong></p>
+    <p>Telefon: +49 155 660 95459</p>
+    <p style="margin-bottom:20px">E-Mail: zavada.igor@web.de</p>
+    <p style="margin-bottom:4px"><strong style="color:var(--white)">Berufsbezeichnung</strong></p>
+    <p style="margin-bottom:20px">Staatlich geprüfter Grafikdesigner · Kleingewerbetreibender gem. § 19 UStG</p>
+    <p style="margin-bottom:4px"><strong style="color:var(--white)">Umsatzsteuer</strong></p>
+    <p style="margin-bottom:20px">Als Kleinunternehmer im Sinne von § 19 Abs. 1 UStG wird keine Umsatzsteuer berechnet.</p>
+    <p style="margin-bottom:4px"><strong style="color:var(--white)">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</strong></p>
+    <p style="margin-bottom:20px">Igor Zavada, Stauferstraße 12, 74523 Schwäbisch Hall</p>
+    <p style="margin-bottom:4px"><strong style="color:var(--white)">Haftungsausschluss</strong></p>
+    <p style="margin-bottom:20px">Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.</p>
+    <button onclick="showPage('main')" style="background:var(--purple);color:#fff;border:none;padding:12px 28px;border-radius:6px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;margin-top:16px">← Zurück zur Website</button>
+  </div>
+</section>
+
+<!-- DATENSCHUTZ -->
+<section id="datenschutz" style="display:none;background:var(--dark)">
+  <div class="s-label">Rechtliches</div>
+  <h2>Datenschutz&shy;erklärung</h2>
+  <div style="max-width:640px;font-size:15px;line-height:1.9;color:var(--muted)">
+    <p style="margin-bottom:16px;font-size:17px;color:var(--white);font-family:'Syne',sans-serif;font-weight:700">1. Verantwortlicher</p>
+    <p style="margin-bottom:20px">Igor Zavada · IZ Agency · Stauferstraße 12 · 74523 Schwäbisch Hall · zavada.igor@web.de</p>
+
+    <p style="margin-bottom:16px;font-size:17px;color:var(--white);font-family:'Syne',sans-serif;font-weight:700">2. Erhebung von Daten</p>
+    <p style="margin-bottom:20px">Beim Besuch dieser Website werden automatisch Informationen allgemeiner Natur erfasst (Server-Logfiles): IP-Adresse, Browsertyp, Betriebssystem, Datum und Uhrzeit des Zugriffs. Diese Daten werden nicht mit anderen Datenquellen zusammengeführt und nach spätestens 7 Tagen gelöscht.</p>
+
+    <p style="margin-bottom:16px;font-size:17px;color:var(--white);font-family:'Syne',sans-serif;font-weight:700">3. Kontaktformular</p>
+    <p style="margin-bottom:20px">Wenn Sie das Kontaktformular nutzen, werden Ihre Angaben zur Bearbeitung der Anfrage gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
+
+    <p style="margin-bottom:16px;font-size:17px;color:var(--white);font-family:'Syne',sans-serif;font-weight:700">4. WhatsApp</p>
+    <p style="margin-bottom:20px">Diese Website enthält Links zu WhatsApp (Meta Platforms Ireland Ltd.). Wenn Sie WhatsApp nutzen, gelten die Datenschutzbestimmungen von WhatsApp. Wir haben keinen Einfluss auf diese Datenerhebung.</p>
+
+    <p style="margin-bottom:16px;font-size:17px;color:var(--white);font-family:'Syne',sans-serif;font-weight:700">5. Google Fonts</p>
+    <p style="margin-bottom:20px">Diese Website verwendet Google Fonts. Beim Laden der Schriften wird Ihre IP-Adresse an Google übertragen. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einheitlicher Darstellung).</p>
+
+    <p style="margin-bottom:16px;font-size:17px;color:var(--white);font-family:'Syne',sans-serif;font-weight:700">6. Ihre Rechte</p>
+    <p style="margin-bottom:20px">Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten. Wenden Sie sich dazu an: zavada.igor@web.de</p>
+
+    <p style="margin-bottom:16px;font-size:17px;color:var(--white);font-family:'Syne',sans-serif;font-weight:700">7. Beschwerderecht</p>
+    <p style="margin-bottom:20px">Sie haben das Recht, sich bei der zuständigen Datenschutzaufsichtsbehörde zu beschweren. Zuständig ist der Landesbeauftragte für Datenschutz Baden-Württemberg.</p>
+
+    <button onclick="showPage('main')" style="background:var(--purple);color:#fff;border:none;padding:12px 28px;border-radius:6px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;margin-top:16px">← Zurück zur Website</button>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo">IZ AGENCY</div>
+  <div class="f-copy">© 2025 IZ Agency · Igor Zavada · Staatl. gepr. Grafikdesigner</div>
+  <div class="f-links">
+    <a href="mailto:zavada.igor@web.de">E-Mail</a>
+    <a href="https://instagram.com/zavada.design" target="_blank">Instagram</a>
+    <a href="#" onclick="showPage('impressum');return false;">Impressum</a>
+    <a href="#" onclick="showPage('datenschutz');return false;">Datenschutz</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/4915566095459" target="_blank" class="wa">💬</a>
+
+<script>
+function showPage(page){if(page==="main"){document.querySelectorAll("nav,section,.stats-strip,footer,.wa").forEach(el=>el.style.display="");document.getElementById("impressum").style.display="none";document.getElementById("datenschutz").style.display="none";}else{document.querySelectorAll("section:not(#impressum):not(#datenschutz)").forEach(el=>el.style.display="none");var s=document.querySelector(".stats-strip");if(s)s.style.display="none";document.getElementById("impressum").style.display=page==="impressum"?"block":"none";document.getElementById("datenschutz").style.display=page==="datenschutz"?"block":"none";}window.scrollTo(0,0);}
+const obs=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(e.target.style.opacity='1',e.target.style.transform='translateY(0)')})},{threshold:.08});
+document.querySelectorAll('.svc,.res-card,.port-card,.price-card,.cmethod,.stat-item').forEach(e=>{e.style.opacity='0';e.style.transform='translateY(22px)';e.style.transition='opacity 0.55s ease,transform 0.55s ease';obs.observe(e)});
+</script>
+</body>
+</html>
